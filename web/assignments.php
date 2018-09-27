@@ -10,7 +10,7 @@
             <a href="assignments.php">Assigments</a>
         </div>
         <div class="wrapper">
-            <div><?php?>
+            <div>
                 <p><b>Assignment Name:</b>
                     <br/>
                     To come
