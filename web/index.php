@@ -8,7 +8,7 @@
         <div class="navbar">
             <a href="index.php">Home</a>
             <a href="assignments.php">Assigments</a>
-            <div id="time"><?php echo date("h:s Y/m/d");?></div>
+            <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
         <div class="wrapper">
             <div id="picture1">
