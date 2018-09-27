@@ -13,7 +13,7 @@
             <div id="picture1">
                 <img src="week2/profile.jpg" alt="Profile Pic" width="100%" height="100%">
             </div>
-
+<?php?>
             <div id="share1">
                 <center><h4>About Joe Burgess</h4></center>
                 <p align="justify">
