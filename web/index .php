@@ -6,8 +6,8 @@
     </head>
     <body>
         <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="assignments.html">Assigments</a>
+            <a href="index.php">Home</a>
+            <a href="assignments.php">Assigments</a>
         </div>
         <div class="wrapper">
             <div id="picture1">
@@ -17,7 +17,7 @@
             <div id="share1">
                 <center><h4>About Joe Burgess</h4></center>
                 <p align="justify">
-                    I grew up in southren california. I'm the second oldest out of five in my family. When I was in my childhood scouts was a big part of my life. That led into rock climbing in high school. Rock climbing has really gotten me into the fittness mind set. I'm also a huge yoga enthusiast. I served my mission in Georgia Macon mission. After I graduate I hope to join a company like The Ocean Cleanup or The City of Hope and provide my skills for the beenifit of the cause. 
+                    I grew up in southern california. I'm the second oldest out of five in my family. When I was in my childhood scouts was a big part of my life. That led into rock climbing in high school. Rock climbing has really gotten me into the fittness mind set. I'm also a huge yoga enthusiast. I served my mission in Georgia Macon mission. After I graduate I hope to join a company like The Ocean Cleanup or The City of Hope and provide my skills for the beenifit of the cause. 
                 </p>
             </div>
 
