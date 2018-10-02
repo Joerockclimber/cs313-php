@@ -30,3 +30,7 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+img {
+    height: 250px;
+    width: 250;
+}
