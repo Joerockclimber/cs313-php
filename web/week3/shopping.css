@@ -8,7 +8,7 @@
     margin-top: 100px;
 }
 
-.wrapper > form{
+.wrapper > table{
     background: #eee;
     padding: 1em;
     grid-column: 2/12
