@@ -3,15 +3,14 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 1em;
     justify-items: stretch;
-    align-items: stretch;
-    grid-template-rows: repeat(3, 30vw); 
+    align-items: stretch; 
     margin-top: 100px;
 }
 
 .wrapper > table{
     background: #eee;
     padding: 1em;
-    grid-column: 3/9
+    grid-column: 5/9
 
 }
 
