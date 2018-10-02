@@ -7,7 +7,7 @@
     margin-top: 100px;
 }
 
-.wrapper > div #table{
+.wrapper > div > #table{
     background: #eee;
     padding: 1em;
     grid-column: 5/9
