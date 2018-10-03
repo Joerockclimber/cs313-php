@@ -1,9 +1,7 @@
 <?php 
 session_start();
-ses
-    <div class="cart">sion_unset();
+session_unset();
 $places = $_POST["places"];
-print_r ($_POST);
 ?>
 
 <!DOCTYPE html>
