@@ -4,7 +4,8 @@
     grid-gap: 1em;
     justify-items: stretch;
     align-items: stretch;
-    grid-template-rows: repeat(3, 30vw); margin-top: 100px;
+    grid-template-rows: repeat(3, 30vw); 
+    margin-top: 100px;
 }
 .wrapper > div{
     background: #eee;
