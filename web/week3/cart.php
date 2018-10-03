@@ -27,7 +27,7 @@ $places = $_POST["places"];
                         <th>Price</th>
                         <th></th>
                     </tr>
-                    <?
+                    <?php
                     $n = 0;
                     $names = array(0 => 'North Amaerica', 1 => 'South America', 2 => Asia, 3 => 'Europe', 4 => 'Africa', 5 => 'Australia', 6 => 'Antarctica');
                     foreach ($places as $place)
