@@ -37,7 +37,7 @@ $places = $_POST["places"];
                             echo "<tr><td>$place_clean</td> <td>$names[$n]</td>" . "<td>" . $place_clean * 15.00 . '$</td><td><input type="submit" value="Submit"></td></tr>';
                             
                             $_SESSION[$n] = array($names[$n],$place);
-                            echo '<meta http-equiv="refresh" content="0"">'
+                            echo '<meta http-equiv="refresh" content="0"">';
                         }
                         $n++;
                     }
