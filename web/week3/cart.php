@@ -21,11 +21,11 @@ print_r ($_POST);
                 $place_clean = htmlspecialchars($place);
                 if($place_clean != null && $place_clean >= 1){
                 echo "<li><p>$place_clean $names[$n] </p></li>";
-                $_SESSION[$n] = array(names[$n],$place);
+                $_SESSION[$n] = array($names[$n],$place);
                 }
                 $n++;
-                print_r($_SESSION);
             }
+            print_r($_SESSION);
             ?>		
 
         </ul>
