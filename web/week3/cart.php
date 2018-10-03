@@ -12,7 +12,7 @@ $places = $_POST["places"];
             foreach ($places as $place)
             {
                 $place_clean = htmlspecialchars($place);
-                if($place_clean != null && $place_clean <= 1){
+                if($place_clean != null && $place_clean >= 1){
                 echo "<li><p>$place_clean</p></li>";
                 }
             }
