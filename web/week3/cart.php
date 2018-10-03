@@ -20,7 +20,7 @@ $places = $_POST["places"];
         <div class="wrapper">
             <div class="cart">
                 <center><h1>Cart</h1></center>
-                <ul>
+                <ol>
 
                     <?
                     $n = 0;
@@ -36,7 +36,7 @@ $places = $_POST["places"];
                     }
                     ?>		
 
-                </ul>
+                </ol>
             </div>
         </div>
     </body>
