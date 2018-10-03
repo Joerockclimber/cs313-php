@@ -23,7 +23,7 @@
                             <th>Quantity</th>
                         </tr>
                         <tr>
-                            <td><img src="North America.jpg" alt="North AMerica"></td>
+                            <td><img src="North America.jpg" alt="North America"></td>
                             <td>North America</td>
                             <td>$15.00</td>
                             <td>
