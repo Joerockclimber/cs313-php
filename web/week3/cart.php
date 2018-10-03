@@ -20,8 +20,12 @@ $places = $_POST["places"];
         <div class="wrapper">
             <div class="cart">
                 <center><h1>Cart</h1></center>
-                <ol>
-
+                <table>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Map</th>
+                            <th>Price</th>
+                        </tr>
                     <?
                     $n = 0;
                     $names = array(0 => 'North Amaerica', 1 => 'South America', 2 => Asia, 3 => 'Europe', 4 => 'Africa', 5 => 'Australia', 6 => 'Antarctica');
@@ -29,14 +33,14 @@ $places = $_POST["places"];
                     {
                         $place_clean = htmlspecialchars($place);
                         if($place_clean != null && $place_clean >= 1){
-                            echo "<li><p> $place_clean $names[$n] " . $place_clean * 15.00 . "$ </p></li>";
+                            echo "<tr><td>$place_clean</td> <td>$names[$n]</td>" . "<td>" . $place_clean * 15.00 . "$</td></tr>";
                             $_SESSION[$n] = array($names[$n],$place);
                         }
                         $n++;
                     }
                     ?>		
 
-                </ol>
+                </table>
             </div>
         </div>
     </body>
