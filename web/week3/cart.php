@@ -6,7 +6,9 @@ if($places){
     $_SESSION['quantity'] = $places;
     $_SESSION['countries'] = array('North Amaerica', 'South America', 'Asia', 'Europe', 'Africa', 'Australia', 'Antarctica');
 }
-print_r($places);
+print_r($_SESSION);
+print_r($_SESSION['quantity']);
+echo $_SESSION['quantity'].legnth;
 $price = 15;
 ?>
 
