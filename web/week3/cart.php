@@ -43,6 +43,7 @@ $price = 15;
                         <th></th>
                     </tr>
                     <?php
+
                     for($n = 0; $n < count($_SESSION['quantity']); $n++)
                     {
                         if($_SESSION["quantity"][$n] != null && $_SESSION["quantity"][$n] >= 1){
@@ -51,6 +52,7 @@ $price = 15;
                     }
                     ?>		
                 </table>
+                <center><a class="button" href="shopping.php">Change Order</a> <a class="button" href="Checkout">Checkout</a></center>
             </div>
         </div>
     </body>
