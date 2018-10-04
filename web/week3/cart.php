@@ -34,12 +34,10 @@ $price = 15;
                         <th></th>
                     </tr>
                     <?php
-
-
                     for($n = 0; $n < $_SESSION['quantity'].length; $n++)
                     { print_r($_SESSION["countries"]);
-                        if($_SESSION['quantity'][$n] != null && $_SESSION['quantity'][$n] >= 1){
-                            echo "<tr><td>" . $_SESSION['quantity'][$n] . "</td> <td>" .$_SESSION['countries'][$n] . "</td><td>" . $_SESSION['quantity'][$n] * $price . "$</td><td><button type=\"button\" onclick=\"removeFromCart($n)\">Delete</button></td></tr>";
+                        if($_SESSION["quantity"][$n] != null && $_SESSION["quantity"][$n] >= 1){
+                            echo "<tr><td>" . $_SESSION["quantity"][$n] . "</td> <td>" .$_SESSION["countries"][$n] . "</td><td>" . $_SESSION["quantity"][$n] * $price . "$</td><td><button type=\"button\" onclick=\"removeFromCart($n)\">Delete</button></td></tr>";
                         }
                     }
                     ?>		
