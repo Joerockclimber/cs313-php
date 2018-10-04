@@ -50,7 +50,7 @@ $price = 15;
                     }
                     ?>		
                 </table>
-                <center><a class="button" href="shopping.php">Change Order</a> <a class="button" href="Checkout">Checkout</a></center>
+                <center><a class="button" href="shopping.php">Change Order</a> <a class="button" href="checkout.php">Checkout</a></center>
             </div>
         </div>
     </body>
