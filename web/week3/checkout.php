@@ -13,18 +13,20 @@
         </div>
         <div class="wrapper">
             <div class="cart">
-                <form method="POST" action="results.php">
-                    <label for="city">Name</label>
-                    <input type="text" placeholder="City" id="city" name="city">
-                    <br />
-                    <label for="state">Email</label>
-                    <input type="text" placeholder="State" id="state" name="state">
-                    <br />
-                    <label for="adress">Adress</label>
-                    <input type="text" placeholder="Adress" id="adress" name="adress">
-                    <br />
-                    <input type="submit" value="Confirm" id ="confirm">
-                </form>
+                <center>
+                    <form method="POST" action="results.php">
+                        <label for="city">Name</label>
+                        <input type="text" placeholder="City" id="city" name="city">
+                        <br />
+                        <label for="state">Email</label>
+                        <input type="text" placeholder="State" id="state" name="state">
+                        <br />
+                        <label for="adress">Adress</label>
+                        <input type="text" placeholder="Adress" id="adress" name="adress">
+                        <br />
+                        <input type="submit" value="Confirm" id ="confirm">
+                    </form>
+                </center>
             </div>
         </div>
     </body>
