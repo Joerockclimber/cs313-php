@@ -14,7 +14,6 @@
         <div class="wrapper">
             <div class="cart">
                 <form method="POST" action="results.php">
-                    <p>Please answer the following questions:</p>
                     <label for="city">Name</label>
                     <input type="text" placeholder="City" id="city" name="city">
                     <br />
