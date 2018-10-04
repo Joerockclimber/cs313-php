@@ -23,8 +23,8 @@
                         <label for="state">State</label>
                         <input type="text" placeholder="State" id="state" name="state">
                         <br />
-                        <label for="adress">Address</label>
-                        <input type="text" placeholder="Adress" id="adress" name="adress">
+                        <label for="address">Address</label>
+                        <input type="text" placeholder="Address" id="address" name="address">
                         <br />
                         <label for="zip">Zip</label>
                         <input type="text" placeholder="Zip" id="zip" name="zip">
