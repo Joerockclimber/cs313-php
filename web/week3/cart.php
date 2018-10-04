@@ -34,7 +34,7 @@ $places = $_POST["places"];
                     {
                         $place_clean = htmlspecialchars($place);
                         if($place_clean != null && $place_clean >= 1){
-                            echo "<tr><td>$place_clean</td> <td>$names[$n]</td>" . "<td>" . $place_clean * 15.00 . "$</td></tr>";
+                            echo "<tr><td>$place_clean</td> <td>$names[$n]</td>" . "<td>" . $place_clean * 15.00 . '$</td><td><input type="submit" value="Submit"></td></tr>';
                             
                             $_SESSION[$n] = array($names[$n],$place);
                         }
