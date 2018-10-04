@@ -1,10 +1,12 @@
 <?php 
 session_start();
-$places = $_POST["places"];
 
-if($_SESSION['quantity']){
-    
+if($_SESSION['new'][0] == 1){
+   $_SESSION['new'][0] = 0;
+   $_POST['places'] = $_SESSION['quantity']
 }
+
+$places = $_POST["places"];
 
 if($places){
     $_SESSION['quantity'] = $places;
