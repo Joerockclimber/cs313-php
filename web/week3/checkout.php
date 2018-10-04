@@ -15,13 +15,16 @@
             <div class="cart">
                 <form method="POST" action="results.php">
                     <p>Please answer the following questions:</p>
-                    <label for="name">Name</label>
-                    <input type="text" placeholder="Name" id="name" name="name">
+                    <label for="city">Name</label>
+                    <input type="text" placeholder="City" id="city" name="city">
                     <br />
-                    <label for="email">Email</label>
-                    <input type="text" placeholder="Email Address" id="email" name="email">
+                    <label for="state">Email</label>
+                    <input type="text" placeholder="State" id="state" name="state">
                     <br />
-                    <input type="submit" value="Submit Answers">
+                    <label for="adress">Adress</label>
+                    <input type="text" placeholder="Adress" id="adress" name="adress">
+                    <br />
+                    <input type="submit" value="Confirm" id ="confirm">
                 </form>
             </div>
         </div>
