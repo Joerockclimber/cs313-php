@@ -14,15 +14,15 @@
             <div>
                 <p><b>Assignment Name:</b>
                     <br/>
-                    To come
+                    Shopping cart
                     <br/>
                     <b>Purpose:</b>
                     <br/>
-                    To come
+                    This assignment was here to learn basic php coding and how to share data with multiple pages.
                     <br/>
                     <b>Link:</b>
                     <br/>
-                    To come</p>
+                    <a herf="week3/shopping.php">Shopping Cart</a></p>
             </div>
         </div>
     </body>
