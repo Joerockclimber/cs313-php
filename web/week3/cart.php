@@ -8,7 +8,7 @@ if($places){
 }
 print_r($_SESSION);
 print_r($_SESSION['quantity']);
-echo $_SESSION['quantity'].legnth;
+echo count($_SESSION['quantity']);
 $price = 15;
 ?>
 
@@ -36,7 +36,7 @@ $price = 15;
                         <th></th>
                     </tr>
                     <?php
-                    for($n = 0; $n < $_SESSION['quantity'].length; $n++)
+                    for($n = 0; $n < count($_SESSION['quantity']); $n++)
                     {
                         if($_SESSION["quantity"][$n] != null && $_SESSION["quantity"][$n] >= 1){
                             echo "<tr><td>" . $_SESSION["quantity"][$n] . "</td> <td>" . $_SESSION["countries"][$n] . "</td><td>" . $_SESSION["quantity"][$n] * $price . "$</td><td><button type=\"button\" onclick=\"removeFromCart($n)\">Delete</button></td></tr>";
