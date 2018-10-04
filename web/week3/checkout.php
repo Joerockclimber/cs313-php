@@ -14,6 +14,7 @@
         <div class="wrapper">
             <div class="cart">
                 <center>
+                    <h5>Please fill out billing information</h5>
                     <form method="POST" action="results.php">
                         <label for="city">Name</label>
                         <input type="text" placeholder="City" id="city" name="city">
