@@ -19,7 +19,6 @@ $places = $_POST["places"];
         </div>
         <div class="wrapper">
             <div class="cart">
-                <form method="post">
                     <center><h1>Cart</h1></center>
                     <table>
                         <tr>
@@ -49,7 +48,7 @@ print_r($_POST);
                         ?>		
 
                     </table>
-                </form>
+                
             </div>
         </div>
     </body>
