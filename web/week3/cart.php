@@ -39,7 +39,7 @@ $price = 15;
                             }
                             $n++;
                         }
-print_r($_POST);
+                        print_r($_SESSION);
                         if(isset($_POST['submit']))
                         {
 
