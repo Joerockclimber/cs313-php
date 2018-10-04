@@ -1,6 +1,7 @@
 <?php 
 session_start();
 $places = $_POST["places"];
+$_SESSION['quantity'] = $places;
 $price = 15;
 ?>
 
@@ -39,7 +40,7 @@ $price = 15;
                             }
                             $n++;
                         }
-                        print_r($_SESSION);
+                        print_r($_SESSION["quantity"]);
                         if(isset($_POST['submit']))
                         {
 
