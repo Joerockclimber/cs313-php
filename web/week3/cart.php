@@ -2,10 +2,15 @@
 session_start();
 $places = $_POST["places"];
 
+if($_SESSION['quantity']){
+    
+}
+
 if($places){
     $_SESSION['quantity'] = $places;
     $_SESSION['countries'] = array('North Amaerica', 'South America', 'Asia', 'Europe', 'Africa', 'Australia', 'Antarctica');
 }
+print_r($_POST['places']);
 print_r($_SESSION);
 print_r($_SESSION['quantity']);
 echo count($_SESSION['quantity']);
