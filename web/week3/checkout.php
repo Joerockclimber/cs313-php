@@ -20,11 +20,14 @@
                         <label for="city">City</label>
                         <input type="text" placeholder="City" id="city" name="city">
                         <br />
-                        <label for="state">Email</label>
+                        <label for="state">State</label>
                         <input type="text" placeholder="State" id="state" name="state">
                         <br />
                         <label for="adress">Address</label>
                         <input type="text" placeholder="Adress" id="adress" name="adress">
+                        <br />
+                        <label for="zip">Zip</label>
+                        <input type="text" placeholder="Zip" id="zip" name="zip">
                         <br />
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>

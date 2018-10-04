@@ -5,6 +5,7 @@ session_start();
 $city = htmlspecialchars($_POST["city"]);
 $state = htmlspecialchars($_POST["state"]);
 $adress = htmlspecialchars($_POST["address"]);
+$zip = htmlspecialchars($_POST["zip"]);
 $price = 15;
 
 ?>
@@ -42,8 +43,11 @@ $price = 15;
                             }
                         }
                         ?>
-                        <tr><td colspan="3"> "Total Price = $ " <?=$total ?></td></tr>
+                        <tr><td colspan="3"> Total Price is: $ <?=$total ?></td></tr>
                     </table>
+                    <h1>Shipping Address</h1>
+                    <p><?=$address ?></p>
+                    <p><?=$city ?>, <?=$state ?>, <?=$zip?></p>
                 </center>
             </div>
         </div>
