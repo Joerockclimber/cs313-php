@@ -1,7 +1,12 @@
 <?php 
 session_start();
 $places = $_POST["places"];
-$_SESSION['quantity'] = $places;
+
+if($places){
+    $_SESSION['quantity'] = $places;
+    $_SESSION['countries'] = array('North Amaerica', 'South America', 'Asia', 'Europe', 'Africa', 'Australia', 'Antarctica');
+}
+
 $price = 15;
 ?>
 
@@ -20,36 +25,38 @@ $price = 15;
         </div>
         <div class="wrapper">
             <div class="cart">
-                    <center><h1>Cart</h1></center>
-                    <table>
-                        <tr>
-                            <th>Quantity</th>
-                            <th>Map</th>
-                            <th>Price</th>
-                            <th></th>
-                        </tr>
-                        <?php
-                        $n = 0;
-                        $names = array(0 => 'North Amaerica', 1 => 'South America', 2 => Asia, 3 => 'Europe', 4 => 'Africa', 5 => 'Australia', 6 => 'Antarctica');
-                        foreach ($places as $place)
-                        {
-                            $place_clean = htmlspecialchars($place);
-                            if($place_clean != null && $place_clean >= 1){
-                                echo "<tr><td>$place_clean</td> <td>$names[$n]</td>" . "<td>" . $place_clean * $price . "$</td><td><input name=\"#$n\" type=\"submit\" value=\"Submit\"></td></tr>";
-                                $_SESSION[$n] = array($names[$n],$place);
-                            }
-                            $n++;
+                <center><h1>Cart</h1></center>
+                <table>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Map</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    <?php
+
+
+                    for($n = 0; $n < $_SESSION['quantity'].length; $n++)
+                    {
+                        if($_SESSION['quantity'][$n] != null && $_SESSION['quantity'][$n] >= 1){
+                            echo "<tr><td>" . $_SESSION['quantity'][$n] . "</td> <td>" .$_SESSION['countries'][$n] . "</td><td>" . $_SESSION['quantity'][$n] * $price . "$</td><td><button type=\"button\" onclick=\"removeFromCart($n)\">Delete</button></td></tr>";
                         }
-                        print_r($_SESSION["quantity"]);
-                        if(isset($_POST['submit']))
-                        {
-
-                        } 
-                        ?>		
-
-                    </table>
-                
+                    }
+                    ?>		
+                </table>
             </div>
         </div>
     </body>
+    <script>
+        function removeFromCart(index){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    location.reload();
+                }
+            };
+            xhttp.open("GET", "removeFromCart.php?index=" + index, true);
+            xhttp.send();
+        }
+    </script>
 </html>
