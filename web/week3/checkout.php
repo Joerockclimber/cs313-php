@@ -9,6 +9,7 @@
             <a href="/index.php">Home</a>
             <a href="/assignments.php">Assigments</a>
             <a href="shopping.php">Shopping</a>
+            <a href="cart.php">Cart</a>
             <a href="checkout.php">Checkout</a>
         </div>
         <div class="wrapper">
