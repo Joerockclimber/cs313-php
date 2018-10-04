@@ -42,7 +42,7 @@ $price = 15;
                             }
                         }
                         ?>
-                        <tr>Total = $ <?=$total ?> </tr>
+                        <tr><td colspan="3"> "Total Price = $ " <?=$total ?></td></tr>
                     </table>
                 </center>
             </div>
