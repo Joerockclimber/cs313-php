@@ -18,8 +18,7 @@ $places = $_POST["places"];
         </div>
         <div class="wrapper">
             <div class="cart">
-                <center><h1>Cart</h1></center>
-                <form method="post">
+                    <center><h1>Cart</h1></center>
                     <table>
                         <tr>
                             <th>Quantity</th>
@@ -34,12 +33,12 @@ $places = $_POST["places"];
                         {
                             $place_clean = htmlspecialchars($place);
                             if($place_clean != null && $place_clean >= 1){
+                                echo "<tr><td>$place_clean</td> <td>$names[$n]</td>" . "<td>" . $place_clean * 15.00 . "$</td><td><input name=\"#$n\" type=\"submit\" value=\"Submit\"></td></tr>";
                                 $_SESSION[$n] = array($names[$n],$place);
-                                echo "<tr><td>" . $_SESSION[$n][0] . "</td> <td>" . $SESSIOM[$n][1] . "</td>" . "<td>" . $_SESSION[$n][0] * 15.00 . "$</td><td><input name=\"#$n\" type=\"submit\" value=\"Submit\"></td></tr>";
                             }
                             $n++;
                         }
-                        print_r($_POST);
+print_r($_POST);
                         if(isset($_POST['submit']))
                         {
 
@@ -47,7 +46,7 @@ $places = $_POST["places"];
                         ?>		
 
                     </table>
-                </form>
+                
             </div>
         </div>
     </body>
