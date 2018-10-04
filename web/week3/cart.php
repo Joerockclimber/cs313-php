@@ -3,7 +3,7 @@ session_start();
 
 if($_SESSION['new'][0] == 1){
    $_SESSION['new'][0] = 0;
-   $_POST['places'] = $_SESSION['quantity']
+   $_POST['places'] = $_SESSION['quantity'];
 }
 
 $places = $_POST["places"];
