@@ -30,7 +30,6 @@ $price = 15;
                             <th>Quantity</th>
                             <th>Map</th>
                             <th>Price</th>
-                            <th></th>
                         </tr>
                         <?php
                         $total = 0;
@@ -42,7 +41,7 @@ $price = 15;
                             }
                         }
                         ?>
-                        <tr><td>Total = $ <?=$total ?> </td></tr>
+                        <tr>Total = $ <?=$total ?> </tr>
                     </table>
                 </center>
             </div>
