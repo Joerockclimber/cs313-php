@@ -4,7 +4,7 @@ session_start();
 
 $city = htmlspecialchars($_POST["city"]);
 $state = htmlspecialchars($_POST["state"]);
-$adress = htmlspecialchars($_POST["address"]);
+$address = htmlspecialchars($_POST["address"]);
 $zip = htmlspecialchars($_POST["zip"]);
 $price = 15;
 
