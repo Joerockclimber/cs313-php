@@ -22,7 +22,7 @@
                     <br/>
                     <b>Link:</b>
                     <br/>
-                    <a herf="week3/shopping.php">Shopping Cart</a></p>
+                    <a href="week3/shopping.php">Shopping Cart</a></p>
             </div>
         </div>
     </body>
