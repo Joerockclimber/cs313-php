@@ -8,7 +8,6 @@
             <a href="/index.php">Home</a>
             <a href="/assignments.php">Assigments</a>
             <a href="cart.php">Cart</a>
-            <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
         <div class="wrapper">
             <div id="table">
