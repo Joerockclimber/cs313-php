@@ -29,7 +29,7 @@ $price = 15;
             <a href="/assignments.php">Assigments</a>
             <a href="shopping.php">Shopping</a>
             <a href="cart.php">Cart</a>
-            <a href="checkout">Checkout</a>
+            <a href="checkout.php">Checkout</a>
         </div>
         <div class="wrapper">
             <div class="cart">
