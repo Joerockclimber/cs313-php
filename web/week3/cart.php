@@ -12,9 +12,7 @@ if($places){
     $_SESSION['quantity'] = $places;
     $_SESSION['countries'] = array('North Amaerica', 'South America', 'Asia', 'Europe', 'Africa', 'Australia', 'Antarctica');
 }
-print_r($_POST['places']);
-print_r($_SESSION);
-print_r($_SESSION['quantity']);
+
 echo count($_SESSION['quantity']);
 $price = 15;
 ?>
@@ -30,7 +28,7 @@ $price = 15;
             <a href="/index.php">Home</a>
             <a href="/assignments.php">Assigments</a>
             <a href="shopping.php">Shopping</a>
-            <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
+            <a href="Checkout">Checkout</a>
         </div>
         <div class="wrapper">
             <div class="cart">
