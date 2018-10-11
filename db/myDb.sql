@@ -1,11 +1,11 @@
 create table climber (
   climber_id    SERIAL PRIMARY KEY,
-  trip_id    int REFERENCES trip,
-  name   varchar(80),
+  name   varchar(80)
 );
 
 create table trip (
   trip_id    SERIAL PRIMARY KEY,
+  climber_id int REFERENCES climber,
   location   varchar(80),
   date DATE
 );
