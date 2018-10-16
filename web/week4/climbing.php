@@ -49,7 +49,6 @@ catch (PDOException $ex)
                 {
                     echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                     echo '<br/>';
-                    $statement = $db->query('SELECT username, password FROM note_user');
 
                     $stmt = $db->prepare('SELECT name, grade FROM climb where trip_id =:id');
                     $stmt->execute(array(':id' => $row['trip_id']));
