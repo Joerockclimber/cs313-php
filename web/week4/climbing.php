@@ -50,7 +50,7 @@ catch (PDOException $ex)
                     echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                     echo '<br/>';
 
-                    $stmt = $db->prepare('SELECT name, grade FROM climb where trip_id =:id');
+                    $stmt = $db->prepare('SELECT name, grade FROM climb where trip_id = :id ');
                     echo 'yes';
                     $stmt->execute(array(':id' => $row['trip_id']));
                     
