@@ -38,9 +38,11 @@ catch (PDOException $ex)
         <div class="wrapper">
             <div>
                 <?
-                $db->query('SELECT name FROM climber where name "Joe Burgess"');
-                    echo 'Climber: ' . $db['name'];
+                foreach ($db->query('SELECT name FROM climber where name "Joe Burgess"') as $row)
+                {
+                    echo 'Climber: ' . $row['name'];
                     echo '<br/>';
+                }
                 ?>
                 Trip:
                 Climb:
