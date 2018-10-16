@@ -45,7 +45,14 @@ catch (PDOException $ex)
                 }
                 ?>
                 <?
-                foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
+                
+                $result = $db->query('SELECT date, location, trip_id, grade, name FROM trip JOIN climb on trip.trip_id = climb.trip_id ORDER BY trip_id');
+                
+                var_dump($result);
+                
+                    
+                
+                /*foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
                 {
                     echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                     echo '<br/>';
@@ -60,7 +67,7 @@ catch (PDOException $ex)
                         echo 'Climb: ' . $row2['name'] . ' grade: ' . $row2['grade']; 
                         echo '<br/>';
                     }
-                }
+                }*/
                 ?>
                 Climb:
             </div>
