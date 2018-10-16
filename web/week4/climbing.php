@@ -31,8 +31,8 @@ catch (PDOException $ex)
     </head>
     <body>
         <div class="navbar">
-            <a href="index.php">Home</a>
-            <a href="assignments.php">Assigments</a>
+            <a href="../index.php">Home</a>
+            <a href="../assignments.php">Assigments</a>
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
         <div class="wrapper">
@@ -44,7 +44,18 @@ catch (PDOException $ex)
                     echo '<br/>';
                 }
                 ?>
-                Trip:
+                <?
+                foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
+                {
+                    echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
+                    echo '<br/>';
+                    foreach ($db->query('SELECT name, grade FROM climb where trip_id ==' . row['trip_id']) as $row)
+                    {
+                        echo 'Climb: ' . $row['name'] . ' grade: ' . $row['grade'];
+                        echo '<br/>';
+                    }
+                }
+                ?>
                 Climb:
             </div>
         </div>
