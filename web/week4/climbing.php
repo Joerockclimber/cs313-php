@@ -49,9 +49,9 @@ catch (PDOException $ex)
                 {
                     echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                     echo '<br/>';
-                    foreach ($db->query('SELECT name, grade FROM climb where trip_id ==' . $row['trip_id']) as $row2)
+                    foreach ($db->query('SELECT name, grade FROM climb where trip_id == "' . $row['trip_id'] . '"') as $row2)
                     {
-                        echo 'Climb: ' . $row2['name'] . ' grade: ' . $row2['grade'];
+                        echo 'Climb: ' . $row2['name'] . ' grade: ' . $row2['grade']; 
                         echo '<br/>';
                     }
                 }
