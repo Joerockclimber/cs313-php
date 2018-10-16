@@ -38,11 +38,9 @@ catch (PDOException $ex)
         <div class="wrapper">
             <div>
                 <?
-                $db->query('SELECT name FROM climber')
-                {
+                $db->query('SELECT name FROM climber');
                     echo 'Climber: ' . $db['name'];
                     echo '<br/>';
-                }
                 ?>
                 Trip:
                 Climb:
