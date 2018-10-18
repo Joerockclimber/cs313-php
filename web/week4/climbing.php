@@ -57,7 +57,7 @@ catch (PDOException $ex)
 
                         $pdoResult = $stmt->execute(array(':id' => $trip_id));
                     }
-                    catch (PDOException $ex)
+                    catch (Exception $ex)
                     {
                         echo 'Error!: ' . $ex->getMessage();
                         die();
