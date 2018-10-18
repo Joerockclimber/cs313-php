@@ -55,8 +55,8 @@ catch (PDOException $ex)
                     $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
 
                     $pdoResult = $stmt->execute(array(':id' => $trip_id));
-                    echo $stmt->errorCode();
-                    echo $stmt->errorInfo();
+                    echo '<br/>' . $stmt->errorCode() . '<br/>' ;
+                    echo '<br/>' . $stmt->errorInfo() . '<br/>';
                     $stmt->debugDumpParams();
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
