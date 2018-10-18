@@ -52,9 +52,9 @@ catch (PDOException $ex)
                     echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                     echo '<br/>';
                     $trip_id = $row['trip_id'];
-
-                    $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
                     try{
+                        $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
+
                         $pdoResult = $stmt->execute(array(':id' => $trip_id));
                     }
                     catch (PDOException $ex)
@@ -62,8 +62,6 @@ catch (PDOException $ex)
                         echo 'Error!: ' . $ex->getMessage();
                         die();
                     } 
-                    //echo $pdoResult;
-                    //echo 'yes';
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
                         echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
