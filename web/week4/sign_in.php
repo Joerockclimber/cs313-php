@@ -15,7 +15,7 @@
                 <center>
                     <form method="POST" action="climbing.php">
                         <label for="sign_in">Sign in</label>
-                        <input type="text" placeholder="Sign in" id="sign_in" name="sign_in">
+                        <input type="text" placeholder="Joe Burgess" id="sign_in" name="sign_in">
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>
                 </center>
