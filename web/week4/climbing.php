@@ -60,6 +60,7 @@ catch (PDOException $ex)
                     $stmt->debugDumpParams();
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
+                        echo $row2;
                         echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                         echo '<br/>';
                     }
