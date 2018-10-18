@@ -2,7 +2,6 @@
 session_start();
 
 $_SESSION['name'][0] = $_POST['sign_in'];
-
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -39,7 +38,7 @@ catch (PDOException $ex)
             <?
             $stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
 
-            $stmt->execute(array(':name' => $_SESSION['name']));
+            $stmt->execute(array(':name' => $_SESSION['name'][0]));
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             echo '<a>Climber: ' . $result['name'] . '</a>';
             ?>
