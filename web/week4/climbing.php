@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+$_SESSION['name'][0] = $_POST['sign_in'];
 
 try
 {
@@ -34,10 +37,10 @@ catch (PDOException $ex)
             <a href="../index.php">Home</a>
             <a href="../assignments.php">Assigments</a>
             <?
-            foreach ($db->query('SELECT name FROM climber') as $row)
-            {
-                echo '<a>Climber: ' . $row['name'] . '</a>';
-            }
+            $stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
+
+            $stmt->execute(array(':name' => $_SESSION['name']));
+            echo '<a>Climber: ' . $stmt['name'] . '</a>';
             ?>
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
