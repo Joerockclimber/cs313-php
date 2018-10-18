@@ -14,7 +14,7 @@ try
 
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-    //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
 {
@@ -44,9 +44,9 @@ catch (PDOException $ex)
                     echo '<br/>';
                 }
                 ?>
-                
+
                 <?  
-                
+
                 foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
                 {
                     echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
@@ -54,11 +54,17 @@ catch (PDOException $ex)
                     $trip_id = $row['trip_id'];
 
                     $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
-                    
-                    $pdoResult = $stmt->execute(array(':id' => $trip_id));
+                    try{
+                        $pdoResult = $stmt->execute(array(':id' => $trip_id));
+                    }
+                    catch (PDOException $ex)
+                    {
+                        echo 'Error!: ' . $ex->getMessage();
+                        die();
+                    } 
                     //echo $pdoResult;
                     //echo 'yes';
-                    while ($row2 = $stmt->fetchAll(/*PDO::FETCH_ASSOC*/))
+                    while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
                         echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                         echo '<br/>';
