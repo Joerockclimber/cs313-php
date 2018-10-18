@@ -40,7 +40,8 @@ catch (PDOException $ex)
             $stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
 
             $stmt->execute(array(':name' => $_SESSION['name']));
-            echo '<a>Climber: ' . $stmt['name'] . '</a>';
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            echo '<a>Climber: ' . $result['name'] . '</a>';
             ?>
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
