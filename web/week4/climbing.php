@@ -55,10 +55,10 @@ catch (PDOException $ex)
                     echo "trip_id:" . $trip_id;
                     $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
 
-                    $pdoResult = $stmt->execute(array(':id' => $trip_id));
-                    echo '<br/>' . $stmt->errorCode() . '<br/>' ;
+                    $stmt->execute(array(':id' => $trip_id));
+                    /*echo '<br/>' . $stmt->errorCode() . '<br/>' ;
                     echo '<br/>' . $stmt->errorInfo() . '<br/>';
-                    $stmt->debugDumpParams();
+                    $stmt->debugDumpParams();*/
                     while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
                         echo $row2;
