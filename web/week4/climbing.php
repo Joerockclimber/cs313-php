@@ -66,8 +66,8 @@ catch (PDOException $ex)
                     echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                     echo '<br/>';
                 }
-                echo '</div>';*/ 
-            }
+                echo '</div>'; 
+            }*/
             ?>
         </div>
     </body>
