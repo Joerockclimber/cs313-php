@@ -59,7 +59,7 @@ catch (PDOException $ex)
                     echo '<br/>' . $stmt->errorCode() . '<br/>' ;
                     echo '<br/>' . $stmt->errorInfo() . '<br/>';
                     $stmt->debugDumpParams();
-                    while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
+                    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row2)
                     {
                         echo $row2;
                         echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
