@@ -11,13 +11,15 @@
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
         <div class="sign_in">
-            <center>
-                <form method="POST" action="climbing.php">
-                    <label for="sign_in">Sign in</label>
-                    <input type="text" placeholder="Sign in" id="sign_in" name="sign_in">
-                    <input type="submit" value="Confirm" id ="confirm">
-                </form>
-            </center>
+            <div>
+                <center>
+                    <form method="POST" action="climbing.php">
+                        <label for="sign_in">Sign in</label>
+                        <input type="text" placeholder="Sign in" id="sign_in" name="sign_in">
+                        <input type="submit" value="Confirm" id ="confirm">
+                    </form>
+                </center>
+            </div>
         </div>
     </body>
 </html>
