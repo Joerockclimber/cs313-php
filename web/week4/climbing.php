@@ -58,7 +58,7 @@ catch (PDOException $ex)
                     $pdoResult = $stmt->execute(array(':id' => $trip_id));
                     //echo $pdoResult;
                     //echo 'yes';
-                    while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
+                    while ($row2 = $stmt->fetchAll(/*PDO::FETCH_ASSOC*/))
                     {
                         echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                         echo '<br/>';
