@@ -47,9 +47,9 @@ catch (PDOException $ex)
                 
                 <?
                 
-                $result = $db->query('SELECT trip.date, trip.location, climb.grade, climb.climb_name FROM trip JOIN climb on trip.trip_id = climb.trip_id ORDER BY trip.trip_id');
+                $db->query('SELECT trip.date, trip.location, climb.grade, climb.climb_name FROM trip JOIN climb on trip.trip_id = climb.trip_id ORDER BY trip.trip_id');
                  
-                var_dump($result);
+                var_dump($db);
                 
         
                 
