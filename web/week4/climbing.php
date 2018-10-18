@@ -48,7 +48,7 @@ catch (PDOException $ex)
 
             foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
             {
-                echo '<div>'
+                echo '<div>';
                 echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                 echo '<br/>';
                 $trip_id = $row['trip_id'];
@@ -63,7 +63,7 @@ catch (PDOException $ex)
                     echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                     echo '<br/>';
                 }
-                echo '<div/>'
+                echo '<div/>';
             }
             ?>
         </div>
