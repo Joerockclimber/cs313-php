@@ -56,6 +56,8 @@ catch (PDOException $ex)
 
                         $pdoResult = $stmt->execute(array(':id' => $trip_id));
                     
+                    echo $stmt->fetchAll();
+                    
 
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
