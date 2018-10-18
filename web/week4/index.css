@@ -25,6 +25,23 @@ p {
     line-height: 1.6;
 }
 
+.sign_in{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1em;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-rows: repeat(3, 30vw); 
+    margin-top: 100px;
+}
+
+.sign_in > div{
+    background: #eee;
+    padding: 1em;
+    grid-column: 3/9
+
+}
+
 h4{
     font-size: 2vw;
 }
@@ -62,3 +79,25 @@ h4{
     font-size: 17px;
 }
 
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#confirm {
+    display: block;
+    width: 115px;
+    height: 40px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-top: 4px;
