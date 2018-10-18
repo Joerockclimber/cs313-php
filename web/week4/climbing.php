@@ -57,16 +57,17 @@ catch (PDOException $ex)
 
                         $pdoResult = $stmt->execute(array(':id' => $trip_id));
                     }
-                    catch (Exception $ex)
-                    {
-                        echo 'Error!: ' . $ex->getMessage();
-                        die();
-                    } 
+
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
                         echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                         echo '<br/>';
                     }
+                    catch (Exception $ex)
+                    {
+                        echo 'Error!: ' . $ex->getMessage();
+                        die();
+                    } 
                 }
                 ?>
             </div>
