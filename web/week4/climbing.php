@@ -49,7 +49,7 @@ catch (PDOException $ex)
             $stmt = $db->prepare('SELECT date, location, trip_id FROM trip WHERE climber_id = (SELECT climber_id FROM climber WHERE name = :name)');
             $stmt->execute(array(':name' => $_SESSION['name'][0]));
             
-            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
+            foreach ($stmt->fetch(PDO::FETCH_ASSOC) as $row)
             {
                 echo '<div>';
                 echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
