@@ -45,7 +45,7 @@ catch (PDOException $ex)
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
         <div class="wrapper">
-            <?  
+            <? /* 
             $stmt = $db->prepare('SELECT date, location, trip_id FROM trip WHERE climber_id = (SELECT climber_id FROM climber WHERE name = :name)');
             $stmt->execute(array(':name' => $_SESSION['name'][0]));
             
@@ -61,12 +61,12 @@ catch (PDOException $ex)
                 /*echo '<br/>' . $stmt->errorCode() . '<br/>' ;
                     echo '<br/>' . $stmt->errorInfo() . '<br/>';
                     $stmt->debugDumpParams();*/
-                while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
+                /*while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
                 {
                     echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
                     echo '<br/>';
                 }
-                echo '</div>';
+                echo '</div>';*/ 
             }
             ?>
         </div>
