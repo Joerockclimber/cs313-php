@@ -55,7 +55,8 @@ catch (PDOException $ex)
 
                     $stmt = $db->prepare('SELECT name, grade FROM climb where trip_id = :id');
                     
-                    $stmt->execute(array(':id' => $trip_id));
+                    $pdoResult = $stmt->execute(array(':id' => $trip_id));
+                    echo $pdoResult;
                     echo 'yes';
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
