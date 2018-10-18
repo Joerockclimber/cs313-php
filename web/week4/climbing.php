@@ -46,8 +46,10 @@ catch (PDOException $ex)
         </div>
         <div class="wrapper">
             <?  
-
-            foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
+            $stmt = $db->prepare('SELECT date, location, trip_id FROM trip WHERE climb_id = (SELECT climb_id FROM climber WHERE name = :name)');
+            $stmt->execute(array(':name' => $_SESSION['name'][0]));
+            
+            foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
             {
                 echo '<div>';
                 echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
