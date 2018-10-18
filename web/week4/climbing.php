@@ -35,39 +35,37 @@ catch (PDOException $ex)
             <a href="../assignments.php">Assigments</a>
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
+
+        <?
+        foreach ($db->query('SELECT name FROM climber') as $row)
+        {
+            echo 'Climber: ' . $row['name'];
+            echo '<br/>';
+        }
+        ?>
         <div class="wrapper">
-            <div>
-                <?
-                foreach ($db->query('SELECT name FROM climber') as $row)
-                {
-                    echo 'Climber: ' . $row['name'];
-                    echo '<br/>';
-                }
-                ?>
+            <?  
 
-                <?  
+            foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
+            {
+                echo '<div>'
+                echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
+                echo '<br/>';
+                $trip_id = $row['trip_id'];
+                $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
 
-                foreach ($db->query('SELECT date, location, trip_id FROM trip') as $row)
-                {
-                    echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
-                    echo '<br/>';
-                    $trip_id = $row['trip_id'];
-                    $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
-
-                    $stmt->execute(array(':id' => $trip_id));
-                    /*echo '<br/>' . $stmt->errorCode() . '<br/>' ;
+                $stmt->execute(array(':id' => $trip_id));
+                /*echo '<br/>' . $stmt->errorCode() . '<br/>' ;
                     echo '<br/>' . $stmt->errorInfo() . '<br/>';
                     $stmt->debugDumpParams();*/
-                    while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
-                    {
-                        echo $row2;
-                        echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
-                        echo '<br/>';
-                    }
-
+                while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
+                {
+                    echo 'Climb: ' . $row2['climb_name'] . ' grade: ' . $row2['grade']; 
+                    echo '<br/>';
                 }
-                ?>
-            </div>
+                echo '<div/>'
+            }
+            ?>
         </div>
     </body>
 </html>
