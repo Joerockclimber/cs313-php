@@ -53,10 +53,10 @@ catch (PDOException $ex)
                     echo '<br/>';
                     $trip_id = $row['trip_id'];
 
-                    $stmt = $db->prepare('SELECT name, grade FROM climb where trip_id = $trip_id ');
-                    echo 'yes';
-                    $stmt->execute(array(':id' => $trip_id));
+                    $stmt = $db->prepare('SELECT name, grade FROM climb where trip_id = :id');
                     
+                    $stmt->execute(array(':id' => $trip_id));
+                    echo 'yes';
                     while ($row2 = $stmt->fetchAll(PDO::FETCH_ASSOC))
                     {
                         echo 'Climb: ' . $row2['name'] . ' grade: ' . $row2['grade']; 
