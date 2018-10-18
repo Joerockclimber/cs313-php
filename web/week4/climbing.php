@@ -33,16 +33,14 @@ catch (PDOException $ex)
         <div class="navbar">
             <a href="../index.php">Home</a>
             <a href="../assignments.php">Assigments</a>
+            <?
+            foreach ($db->query('SELECT name FROM climber') as $row)
+            {
+                echo '<a>Climber: ' . $row['name'] . '</a>';
+            }
+            ?>
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
-
-        <?
-        foreach ($db->query('SELECT name FROM climber') as $row)
-        {
-            echo 'Climber: ' . $row['name'];
-            echo '<br/>';
-        }
-        ?>
         <div class="wrapper">
             <?  
 
