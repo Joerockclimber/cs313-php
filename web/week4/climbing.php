@@ -68,7 +68,7 @@ if( $result['name'] == FALSE) {
                 echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
                 echo '<br/>';
                 $trip_id = $row['trip_id'];
-                $stmt = $db->prepare('SELECT climb_name, grade FROM climb WHERE trip_id = :id');
+                $stmt = $db->prepare('SELECT climb_name, grade, climb_id FROM climb WHERE trip_id = :id');
 
                 $stmt->execute(array(':id' => $trip_id));
                 /*echo '<br/>' . $stmt->errorCode() . '<br/>' ;
@@ -76,7 +76,7 @@ if( $result['name'] == FALSE) {
                     $stmt->debugDumpParams();*/
                 while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
                 {
-                    echo 'Climb: ' . $row2['climb_name'] . ' Grade: ' . $row2['grade']; //. //"<button type=\"button\" onclick=\"delete($row2['climb_id'], 'climb')\">Delete</button>"; 
+                    echo 'Climb: ' . $row2['climb_name'] . ' Grade: ' . $row2['grade'] . "<button type=\"button\" onclick=\"delete($row2['climb_id'], 'climb')\">Delete</button>"; 
                     echo '<br/>';
                 }
                 echo '</div>';
