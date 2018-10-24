@@ -80,7 +80,6 @@ if( $result['name'] == FALSE) {
                     echo '<br/>';
                 }
                 echo '</div>';
-                echo $_SESSION['name'][0];
             }
             ?>
         </div>
