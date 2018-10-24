@@ -79,7 +79,8 @@ if( $_SESSION['name'][0] == result['name']) {
                     echo 'Climb: ' . $row2['climb_name'] . ' Grade: ' . $row2['grade']; 
                     echo '<br/>';
                 }
-                echo '</div>'; 
+                echo '</div>';
+                echo $_SESSION['name'][0];
             }
             ?>
         </div>
