@@ -29,7 +29,7 @@ $stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
 $stmt->execute(array(':name' => $_SESSION['name'][0]));
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if( $_SESSION['name'][0] != result['name']) {
+if( $_SESSION['name'][0] == result['name']) {
     $host  = $_SERVER['HTTP_HOST'];
     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
     $extra = 'sign_in.php';
