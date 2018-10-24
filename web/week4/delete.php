@@ -1,5 +1,5 @@
 <?php
-try
+/*try
 {
     $dbUrl = getenv('DATABASE_URL');
 
@@ -19,7 +19,7 @@ catch (PDOException $ex)
 {
     echo 'Error!: ' . $ex->getMessage();
     die();
-} 
+} */
 
 //$table = $_GET['from'];
 //$table_id = $_GET['from'] . "_id";
