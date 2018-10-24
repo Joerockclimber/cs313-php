@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,6 +20,12 @@
                     <form method="POST" action="climbing.php">
                         <label for="sign_in">Sign in</label>
                         <input type="text" value="Joe Burgess" id="sign_in" name="sign_in">
+                        <label for="password">Pass Word</label>
+                        <input type="text" placeholder="Password" id="sign_in" name="sign_in">
+                        <p>
+                            <? if(isset($_SESSION['name'])
+                                echo "wrong password or username") ?>
+                        </p>
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>
                 </center>

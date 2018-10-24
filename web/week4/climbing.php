@@ -23,6 +23,19 @@ catch (PDOException $ex)
     echo 'Error!: ' . $ex->getMessage();
     die();
 } 
+
+$stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
+
+$stmt->execute(array(':name' => $_SESSION['name'][0]));
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if( $_SESSION['name'][0] != result['name']) {
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'sign_in.php';
+    header("Location: http://$host$uri/$extra");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +61,7 @@ catch (PDOException $ex)
             <?  
             $stmt = $db->prepare('SELECT date, location, trip_id FROM trip WHERE climber_id = (SELECT climber_id FROM climber WHERE name = :name)');
             $stmt->execute(array(':name' => $_SESSION['name'][0]));
-            
+
             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
             {
                 echo '<div>';
