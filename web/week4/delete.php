@@ -21,10 +21,10 @@ catch (PDOException $ex)
     die();
 } 
 
-
-$from = $_GET['from'];
+$table = $_GET['from'];
+$table_id = $_GET['from'] . "_id";
 $id = $_GET['id'];
-$stmt = $db->prepare('DELETE FROM :from WHERE :from_id = :id');
-$stmt->execute(array(':id' => $id), ':from' => $from);
+$stmt = $db->prepare('DELETE FROM :table WHERE :table_id = :id');
+$stmt->execute(array(':id' => $id), ':table' => $table, ':table_id' => $table_id);
 
 ?>
