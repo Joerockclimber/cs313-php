@@ -21,7 +21,7 @@ session_start();
                         <label for="sign_in">Sign in</label>
                         <input type="text" value="Joe Burgess" id="sign_in" name="sign_in">
                         <label for="password">Pass Word</label>
-                        <input type="text" placeholder="Password" id="sign_in" name="sign_in">
+                        <input type="text" placeholder="Password" id="password" name="password">
                         <p>
                             <? if(isset($_SESSION['name'][0])){
                                 echo 'wrong password or username';} ?>
