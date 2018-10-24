@@ -76,7 +76,7 @@ if( $result['name'] == FALSE) {
                     $stmt->debugDumpParams();*/
                 while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
                 {
-                    echo "Climb: " . $row2['climb_name'] . " Grade: " . $row2['grade'] . "<button type=\"buttonEntry\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button>"; 
+                    echo "Climb: " . $row2['climb_name'] . " Grade: " . $row2['grade'] . "<button type=\"button\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button>"; 
                     echo '<br/>';
                 }
                 echo '</div>';
