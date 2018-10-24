@@ -76,7 +76,7 @@ if( $result['name'] == FALSE) {
                     $stmt->debugDumpParams();*/
                 while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
                 {
-                    echo 'Climb: ' . $row2['climb_name'] . ' Grade: ' . $row2['grade']; 
+                    echo 'Climb: ' . $row2['climb_name'] . ' Grade: ' . $row2['grade'] . "<button type=\"button\" onclick=\"delete($row2['climb_id'], 'climb')\">Delete</button>"; 
                     echo '<br/>';
                 }
                 echo '</div>';
@@ -84,4 +84,17 @@ if( $result['name'] == FALSE) {
             ?>
         </div>
     </body>
+    <script>
+        function deleteClimb(id, from){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    location.reload();
+                }
+            };
+            xhttp.open("GET", "delete.php?index=" + id + from, true);
+            xhttp.send();
+        }
+    </script>
+           
 </html>
