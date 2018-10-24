@@ -93,7 +93,8 @@ if( $result['name'] == FALSE) {
                     location.reload();
                 }
             };
-            xhttp.open("GET", "delete.php?id=" + id + '&from=' + from, true);
+            //+ '&from=' + from
+            xhttp.open("GET", "delete.php?id=" + id, true);
             xhttp.send();
         }
     </script>
