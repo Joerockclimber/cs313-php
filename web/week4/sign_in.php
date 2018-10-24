@@ -23,8 +23,8 @@ session_start();
                         <label for="password">Pass Word</label>
                         <input type="text" placeholder="Password" id="sign_in" name="sign_in">
                         <p>
-                            <? //if(isset($_SESSION['name'])
-                                echo 'wrong password or username'; ?>
+                            <? if(isset($_SESSION['name']){
+                                echo 'wrong password or username';} ?>
                         </p>
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>
