@@ -21,8 +21,8 @@ catch (PDOException $ex)
     die();
 } 
 
-$table = $_GET['from'];
-$table_id = $_GET['from'] . "_id";
+//$table = $_GET['from'];
+//$table_id = $_GET['from'] . "_id";
 $id = $_GET['id'];
 $stmt = $db->prepare('DELETE FROM climb WHERE climb_id = :id');
 $stmt->execute(array(':id' => $id)); //':table' => $table, ':table_id' => $table_id);
