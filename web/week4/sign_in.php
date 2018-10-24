@@ -24,7 +24,7 @@ session_start();
                         <input type="text" placeholder="Password" id="sign_in" name="sign_in">
                         <p>
                             <? if(isset($_SESSION['name'])
-                                echo "wrong password or username") ?>
+                                echo "wrong password or username"); ?>
                         </p>
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>
