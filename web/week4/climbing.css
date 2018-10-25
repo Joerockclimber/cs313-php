@@ -79,7 +79,7 @@ h4{
     font-size: 17px;
 }
 
-#confirm {
+/*#confirm {
     display: block;
     width: 115px;
     height: 40px;
@@ -90,7 +90,7 @@ h4{
     color: white;
     font-weight: bold;
     margin-top: 4px;
-}
+}*/
 
 table {
     border-collapse: collapse;
