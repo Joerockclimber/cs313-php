@@ -28,7 +28,13 @@ $location = $_POST['location'];
 $date = $_POST['date'];
 
 $stmt = $db->prepare("INSERT INTO trip (climber_id, location, date) VALUES (:id, ':location', ':date');");
-$stmt->execute(array(':id' => $id, ':location' => $location, ':date' => $date)); 
+$stmt->execute(array(':id' => $id, ':location' => $location, ':date' => $date));
+
+$host  = $_SERVER['HTTP_HOST'];
+$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$extra = 'climbing.php';
+header("Location: http://$host$uri/$extra");
+exit();
 
 ?>
 
