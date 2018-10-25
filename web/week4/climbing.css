@@ -102,8 +102,8 @@ th, td {
     padding: 8px;
 }
 
+tr: {background-color: #656571;}
 tr:nth-child(even) {background-color: #f2f2f2;}
-tr:nth-child(old) {background-color: #656571;}
 
 .tripHead th {
     padding-top: 12px;
