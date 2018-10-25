@@ -72,7 +72,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 echo '<table>';
                 echo '<tr>';
                 echo '<th>Trip: ' . $row['location'] . '</th> <th>Date: ' . $row['date'] . "</th><th><button type=\"button\" onclick=\"deleteTrip(" . $row['trip_id'] . ")\">Delete</button></th></tr>";
-                
+
                 echo '<tr><th>Climbs</th></tr>';
                 echo '<tr> <th>Name</th> <th>Grade</th> <th>Delete</th></tr>';
                 $trip_id = $row['trip_id'];
@@ -84,9 +84,9 @@ $_SESSION['climber_id'] = $result['climber_id'];
                     $stmt->debugDumpParams();*/
                 while ($row2 = $stmt->fetch(PDO::FETCH_ASSOC))
                 {
-                    echo "<tr><th> " . $row2['climb_name'] . " </th> <th> " . $row2['grade'] . "</th><th><button type=\"button\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button></th></tr></table>"; 
+                    echo "<tr><td> " . $row2['climb_name'] . " </td> <td> " . $row2['grade'] . "</td><td><button type=\"button\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button></td></tr>"; 
                 }
-
+                echo "</table>";
                 echo "<form method='POST' action='addClimb.php'>";
                 echo    "<label for='climb'>Climb name:</label>";
                 echo        "<input type='text' placeholder='Climb Name' id='climb' name='climb'>";
