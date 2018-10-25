@@ -22,11 +22,11 @@ catch (PDOException $ex)
 }
 
 
-$id = $_POST['climb_id'];
+$id = $_POST['trip_id'];
 $climb = $_POST['climb'];
 $grade = $_POST['grade'];
 
-$stmt = $db->prepare("INSERT INTO climb (climb_id, climb_name, grade) VALUES (:id, :climb, :grade)");
+$stmt = $db->prepare("INSERT INTO climb (trip_id, climb_name, grade) VALUES (:id, :climb, :grade)");
 $stmt->execute(array(':id' => $id, ':climb' => $climb, ':grade' => $grade));
 header("location:http://afternoon-waters-72858.herokuapp.com/week4/climbing.php");
 exit();
