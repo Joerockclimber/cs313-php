@@ -66,6 +66,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
             $stmt = $db->prepare('SELECT date, location, trip_id FROM trip WHERE climber_id = (SELECT climber_id FROM climber WHERE name = :name)');
             $stmt->execute(array(':name' => $_SESSION['name'][0]));
 
+            $n=0;
             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
             {
                 echo '<div>';
@@ -85,7 +86,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
                     echo "<tr><td> " . $row2['climb_name'] . " </td> <td> " . $row2['grade'] . "</td><td><button type=\"button\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button></td></tr>"; 
                 }
                 echo "</table>";
-                echo "<form method='POST' action='addClimb.php'>";
+                echo "<form method='POST' action='addClimb.php' id=' . $n .' display='none'>";
                 echo    "<label for='climb'>Climb name:</label>";
                 echo        "<input type='text' placeholder='Climb Name' id='climb' name='climb'>";
                 echo        "<br />";
@@ -95,12 +96,13 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 echo            "<input type='hidden' id='trip_id' name='trip_id' value=" . $row['trip_id'] . ">";
                 echo            "<input type='submit' value='Confirm' id ='confirm'>";
                 echo            "</form>";
+                echo '<button type="button" onclick="hide('. $n .')">Add Climb</button>';
+                $n++;
                 echo '</div>';
             }
             ?>
-            <br/>
-            <button type="button" onclick="hide()">Add Climb</button>
-            <div id="addTrip" display="none">       
+
+            <div>       
                 <form method="POST" action="addTrip.php">
                     <label for="location">Location</label>
                     <input type="text" placeholder="Location" id="location" name="location">
@@ -140,8 +142,8 @@ $_SESSION['climber_id'] = $result['climber_id'];
             xhttp.send();
         }
 
-        function hide() {
-            var x = document.getElementById("addTrip");
+        function hide(element) {
+            var x = document.getElementById(element);
             if (x.style.display === "none") {
                 x.style.display = "block";
             } else {
