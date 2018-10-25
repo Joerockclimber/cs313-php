@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['name'][0])){
-$_SESSION['name'][0] = $_POST['sign_in'];
+    $_SESSION['name'][0] = $_POST['sign_in'];
 }
 
 try
@@ -83,7 +83,18 @@ $_SESSION['climber_id'] = $result['climber_id'];
                     echo "Climb: " . $row2['climb_name'] . " Grade: " . $row2['grade'] . "<button type=\"button\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button>"; 
                     echo '<br/>';
                 }
-                echo '</div>';
+
+                echo "<form method='POST' action='addTrip.php'>"
+                echo    "<label for='climb'>Climb name</label>"
+                echo        "<input type='text' placeholder='climb' id='climb' name='climb'>"
+                echo        "<br />"
+                echo        "<label for='grade'>Grade</label>"
+                echo            "<input type='text' id='grade' name='grade' maxlength = '2'>"
+                echo            "<br />"
+                echo            "<input type='hidden' id='trip_id' name='trip_id' value='<?echo $row['climb_id'];?>'>"
+                echo            "<input type='submit' value='Confirm' id ='confirm'>"
+                echo            "</form>"
+                            echo '</div>';
             }
             ?>
 
@@ -97,7 +108,8 @@ $_SESSION['climber_id'] = $result['climber_id'];
                     <br />
                     <input type="hidden" id="climberId" name="climber_id" value="<?echo $_SESSION['climber_id'];?>">
                     <input type="submit" value="Confirm" id ="confirm">
-                </form></div>
+                </form>
+            </div>
         </div>
     </body>
 
