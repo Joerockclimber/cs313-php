@@ -72,9 +72,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 echo '<table>';
                 echo '<tr>';
                 echo '<th>Trip: ' . $row['location'] . '</th> <th>Date: ' . $row['date'] . "</th><th><button type=\"button\" onclick=\"deleteTrip(" . $row['trip_id'] . ")\">Delete</button></th></tr>";
-
-                echo '<tr><th>Climbs</th></tr>';
-                echo '<tr> <th>Name</th> <th>Grade</th> <th>Delete</th></tr>';
+                echo '<tr> <th>Climb Name</th> <th>Grade</th> <th>Delete</th></tr>';
                 $trip_id = $row['trip_id'];
                 $stmt = $db->prepare('SELECT climb_name, grade, climb_id FROM climb WHERE trip_id = :id');
 
