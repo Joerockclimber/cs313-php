@@ -92,7 +92,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
                     <label for="date">Date</label>
                     <input type="date" id="date" name="date">
                     <br />
-                    <input type="hidden" id="climberId" name="climberId" value="<?echo $_SESSION['climber_id'];?>">
+                    <input type="hidden" id="climberId" name="climber_id" value="<?echo $_SESSION['climber_id'];?>">
                     <input type="submit" value="Confirm" id ="confirm">
                 </form></div>
         </div>
