@@ -106,7 +106,7 @@ if( $result['name'] == FALSE) {
                 }
             };
             //+ '&from=' + from
-            xhttp.open("GET", "delete.php?id=" + id, true);
+            xhttp.open("GET", "deleteTrip.php?id=" + id, true);
             xhttp.send();
         }
     </script>
