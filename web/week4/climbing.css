@@ -101,7 +101,7 @@ th, td {
     text-align: left;
     padding: 8px;
 }
-tr:nth-child(odd){background-color: #D7B1B1;}
+tr:nth-child(odd){background-color: #799388;}
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 .tripHead th {
