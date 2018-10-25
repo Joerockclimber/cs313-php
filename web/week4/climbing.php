@@ -70,7 +70,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
             {
                 echo '<div>';
                 echo '<table>';
-                echo '<tr>';
+                echo '<tr class="tripHead">';
                 echo '<th>Trip: ' . $row['location'] . '</th> <th>Date: ' . $row['date'] . "</th><th><button type=\"button\" onclick=\"deleteTrip(" . $row['trip_id'] . ")\">Delete</button></th></tr>";
                 echo '<tr> <th>Climb Name</th> <th>Grade</th> <th>Delete</th></tr>';
                 $trip_id = $row['trip_id'];
