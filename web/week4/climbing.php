@@ -87,10 +87,8 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 }
                 echo "</table>";
                 echo "<form method='POST' action='addClimb.php' id='" . $n ."' style='display:none'>";
-                echo    "<label for='climb'>Climb name:</label>";
                 echo        "<input type='text' placeholder='Climb Name' id='climb' name='climb'>";
                 echo        "<br />";
-                echo        "<label for='grade'>Grade</label>";
                 echo            "<input type='text' id='grade' name='grade' placeholder='V#' maxlength = '3'>";
                 echo            "<br />";
                 echo            "<input type='hidden' id='trip_id' name='trip_id' value=" . $row['trip_id'] . ">";
