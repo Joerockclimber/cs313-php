@@ -98,8 +98,9 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 echo '</div>';
             }
             ?>
-
-            <div>       
+            <br/>
+            <button type="button" onclick="hide()">Add Climb</button>
+            <div id="addTrip" display="none">       
                 <form method="POST" action="addTrip.php">
                     <label for="location">Location</label>
                     <input type="text" placeholder="Location" id="location" name="location">
@@ -137,6 +138,15 @@ $_SESSION['climber_id'] = $result['climber_id'];
             //+ '&from=' + from
             xhttp.open("GET", "deleteTrip.php?id=" + id, true);
             xhttp.send();
+        }
+
+        function hide() {
+            var x = document.getElementById("addTrip");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
         }
     </script>
 
