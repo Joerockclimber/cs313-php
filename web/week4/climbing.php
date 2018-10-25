@@ -65,7 +65,7 @@ if( $result['name'] == FALSE) {
             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
             {
                 echo '<div>';
-                echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'] . "<button type=\"button\" onclick=\"deleteTrip(" . $row['climb_id'] . ")\">Delete</button>";
+                echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'] . "<button type=\"button\" onclick=\"deleteTrip(" . $row['trip_id'] . ")\">Delete</button>";
                 echo '<br/>';
                 $trip_id = $row['trip_id'];
                 $stmt = $db->prepare('SELECT climb_name, grade, climb_id FROM climb WHERE trip_id = :id');

@@ -16,3 +16,10 @@ create table climb (
   grade   varchar(2),
   climb_name varchar(80)
 );
+
+
+INSERT INTO trip (climber_id, location, date) VALUES (1, 'Yellow Stone', '3/20/2018');
+
+INSERT INTO climb (trip_id, grade, climb_name) VALUES (4, 'V6', 'The hard hard');
+
+INSERT INTO climb (trip_id, grade, climb_name) VALUES (4, 'V10', 'Surfs up');
