@@ -84,7 +84,7 @@ if( $result['name'] == FALSE) {
             ?>
         </div>
     </body>
-    
+
     <script>
         function deleteEntry(id){
             var xhttp = new XMLHttpRequest();
@@ -97,8 +97,8 @@ if( $result['name'] == FALSE) {
             xhttp.open("GET", "delete.php?id=" + id, true);
             xhttp.send();
         }
-        
-                function deleteTrip(id){
+
+        function deleteTrip(id){
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -110,5 +110,5 @@ if( $result['name'] == FALSE) {
             xhttp.send();
         }
     </script>
-           
+
 </html>

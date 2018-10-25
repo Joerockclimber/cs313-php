@@ -26,7 +26,7 @@ $id = $_GET['id'];
 $stmt = $db->prepare('DELETE FROM climb WHERE trip_id = :id');
 $stmt->execute(array(':id' => $id)); 
 
-$stmt = $db->prepare('DELETE FROM trip WHERE trip_id = :id');
-$stmt->execute(array(':id' => $id));
+$stmt2 = $db->prepare('DELETE FROM trip WHERE trip_id = :id');
+$stmt2->execute(array(':id' => $id));
 
 ?>
