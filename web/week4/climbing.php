@@ -86,6 +86,8 @@ $_SESSION['climber_id'] = $result['climber_id'];
                     echo "<tr><td> " . $row2['climb_name'] . " </td> <td> " . $row2['grade'] . "</td><td><button type=\"button\" onclick=\"deleteEntry(" . $row2['climb_id'] . ")\">Delete</button></td></tr>"; 
                 }
                 echo "</table>";
+                echo "<br/>";
+                echo "<center>";
                 echo "<form method='POST' action='addClimb.php' id='" . $n ."' style='display:none'>";
                 echo        "<input type='text' placeholder='Climb Name' id='climb' name='climb'>";
                 echo        "<br />";
@@ -96,6 +98,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 echo            "</form>";
                 echo '<button type="button" onclick="hide('. $n .')">Add Climb</button>';
                 $n++;
+                echo "</center>";
                 echo '</div>';
             }
             ?>
