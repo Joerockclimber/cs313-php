@@ -106,16 +106,21 @@ $_SESSION['climber_id'] = $result['climber_id'];
             ?>
 
             <div>       
-                <form method="POST" action="addTrip.php">
-                    <label for="location">Location</label>
-                    <input type="text" placeholder="Location" id="location" name="location">
-                    <br />
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="date">
-                    <br />
-                    <input type="hidden" id="climberId" name="climber_id" value="<?echo $_SESSION['climber_id'];?>">
-                    <input type="submit" value="Confirm" id ="confirm">
-                </form>
+                <center>
+                    <h5>Add Trip</h5>
+                    <form method="POST" action="addTrip.php">
+                        <label for="location">Location</label>
+                        <br/>
+                        <input type="text" placeholder="Location" id="location" name="location">
+                        <br />
+                        <label for="date">Date</label>
+                        <br/>
+                        <input type="date" id="date" name="date">
+                        <br />
+                        <input type="hidden" id="climberId" name="climber_id" value="<?echo $_SESSION['climber_id'];?>">
+                        <input type="submit" value="Confirm" id ="confirm">
+                    </form>
+                </center>
             </div>
         </div>
     </body>
