@@ -29,11 +29,7 @@ $date = $_POST['date'];
 
 $stmt = $db->prepare("INSERT INTO trip (climber_id, location, date) VALUES (:id, :location, :date)");
 $stmt->execute(array(':id' => $id, ':location' => $location, ':date' => $date));
-echo "fail";
-$host  = $_SERVER['HTTP_HOST'];
-$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-$extra = 'climbing.php';
-header("Location: http://$host$uri/$extra");
+header("location:http://afternoon-waters-72858.herokuapp.com/week4/climbing.php");
 exit();
 
 ?>
