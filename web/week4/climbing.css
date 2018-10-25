@@ -108,6 +108,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #555F50;
+    background-color: teal;
     color: white;
 }
