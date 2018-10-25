@@ -65,7 +65,7 @@ if( $result['name'] == FALSE) {
             foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row)
             {
                 echo '<div>';
-                echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'];
+                echo 'Trip: ' . $row['location'] . ' Date: ' . $row['date'] . "<button type=\"button\" onclick=\"deleteTrip(" . $row2['climb_id'] . ")\">Delete</button>";
                 echo '<br/>';
                 $trip_id = $row['trip_id'];
                 $stmt = $db->prepare('SELECT climb_name, grade, climb_id FROM climb WHERE trip_id = :id');
@@ -87,6 +87,18 @@ if( $result['name'] == FALSE) {
     
     <script>
         function deleteEntry(id){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    location.reload();
+                }
+            };
+            //+ '&from=' + from
+            xhttp.open("GET", "delete.php?id=" + id, true);
+            xhttp.send();
+        }
+        
+                function deleteTrip(id){
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
