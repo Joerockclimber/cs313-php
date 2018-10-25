@@ -46,7 +46,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
 <html lang="en">
     <head>
         <title>Main Page</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="climbing.css">
     </head>
     <body>
         <div class="navbar">
