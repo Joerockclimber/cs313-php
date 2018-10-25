@@ -91,7 +91,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
                 echo        "<label for='grade'>Grade</label>";
                 echo            "<input type='text' id='grade' name='grade' maxlength = '2'>";
                 echo            "<br />";
-                echo            "<input type='hidden' id='trip_id' name='trip_id' value='<?echo $row['climb_id'];?>'>";
+                echo            "<input type='hidden' id='trip_id' name='trip_id' value=" . $row['climb_id'] . ">";
                 echo            "<input type='submit' value='Confirm' id ='confirm'>";
                 echo            "</form>";
                             echo '</div>';
