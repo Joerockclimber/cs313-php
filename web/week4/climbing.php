@@ -24,7 +24,7 @@ catch (PDOException $ex)
     die();
 } 
 
-$stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
+$stmt = $db->prepare('SELECT name, climber_id FROM climber WHERE name = :name');
 
 $stmt->execute(array(':name' => $_SESSION['name'][0]));
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -36,6 +36,7 @@ if( $result['name'] == FALSE) {
     header("Location: http://$host$uri/$extra");
     exit();
 }
+$_SESSION['climber_id'] = $result['climber_id']; 
 ?>
 
 <!DOCTYPE html>
@@ -82,6 +83,18 @@ if( $result['name'] == FALSE) {
                 echo '</div>';
             }
             ?>
+
+            <div>       
+                <form method="POST" action="addTrip.php">
+                    <label for="location">Location</label>
+                    <input type="text" placeholder="Location" id="location" name="location">
+                    <br />
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date">
+                    <br />
+                    <input type="hidden" id="climberId" name="climberId" value="<?echo $_SESSION['climber_id'];?>">
+                    <input type="submit" value="Confirm" id ="confirm">
+                </form></div>
         </div>
     </body>
 
