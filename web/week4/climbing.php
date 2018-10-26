@@ -52,6 +52,7 @@ $_SESSION['climber_id'] = $result['climber_id'];
         <div class="navbar">
             <a href="../index.php">Home</a>
             <a href="../assignments.php">Assigments</a>
+            <a href="sign_in.php">Login</a>
             <?
             $stmt = $db->prepare('SELECT name, climber_id FROM climber WHERE name = :name');
 
