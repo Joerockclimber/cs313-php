@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,15 +13,11 @@ session_start();
         <div class="sign_in">
             <div>
                 <center>
-                    <form method="POST" action="climbing.php">
-                        <label for="sign_in">Sign in</label>
-                        <input type="text" value="Joe Burgess" id="sign_in" name="sign_in">
-                        <? if(isset($_SESSION['name'][0])){
-    echo 'wrong password or username';} ?>
+                    <form method="POST" action="newClimber.php">
+                        <label for="sign_in">Create User</label>
+                        <input type="text" plasceholder="Name" id="climber" name="climber">
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>
-                    <br/>
-                    <a href =newClimber.html>Create new climber</a>
                 </center>
             </div>
         </div>
