@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['name'][0])){
+if(!isset($_POST['sign_in'])){
     $_SESSION['name'][0] = $_POST['sign_in'];
 }
 
