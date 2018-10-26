@@ -53,11 +53,11 @@ $_SESSION['climber_id'] = $result['climber_id'];
             <a href="../index.php">Home</a>
             <a href="../assignments.php">Assigments</a>
             <?
-            $stmt = $db->prepare('SELECT name FROM climber WHERE name = :name');
+            $stmt = $db->prepare('SELECT name, climber_id FROM climber WHERE name = :name');
 
             $stmt->execute(array(':name' => $_SESSION['name'][0]));
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            echo '<a>Climber: ' . $result['name'] . '</a>';
+            echo '<a>Climber: ' . $result['name'] . "<button type=\"button\" onclick=\"deleteClimber(" . $result['climber_id'] . ")\">Delete</button>" . '</a>';
             ?>
             <div id="time"><?php echo date("h:i:sa Y/m/d");?></div>
         </div>
@@ -148,6 +148,18 @@ $_SESSION['climber_id'] = $result['climber_id'];
             };
             //+ '&from=' + from
             xhttp.open("GET", "deleteTrip.php?id=" + id, true);
+            xhttp.send();
+        }
+
+        function deleteClimber(id){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    location.reload();
+                }
+            };
+            //+ '&from=' + from
+            xhttp.open("GET", "deleteClimber.php?id=" + id, true);
             xhttp.send();
         }
 
