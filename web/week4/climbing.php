@@ -3,6 +3,7 @@ session_start();
 
 if(isset($_POST['sign_in'])){
     $_SESSION['name'][0] = $_POST['sign_in'];
+    $_SESSION['password'] = $_POST['password'];
 }
 
 try
@@ -27,9 +28,11 @@ catch (PDOException $ex)
     die();
 } 
 
-$stmt = $db->prepare('SELECT name, climber_id FROM climber WHERE name = :name');
+$hash = password_hash($_SESSION['password'], PASSWORD_DEFAULT);
 
-$stmt->execute(array(':name' => $_SESSION['name'][0]));
+$stmt = $db->prepare('SELECT name, climber_id FROM climber WHERE name = :name and password = :password');
+
+$stmt->execute(array(':name' => $_SESSION['name'][0], ':password' => $_SESSION['password']));
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if( $result['name'] == FALSE) {

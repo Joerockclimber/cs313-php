@@ -20,8 +20,9 @@ session_start();
                     <form method="POST" action="climbing.php">
                         <label for="sign_in">Sign in</label>
                         <input type="text" placeholder="Name" id="sign_in" name="sign_in">
-                        <? if(isset($_SESSION['name'][0])){
-    echo 'Might be a wrong username';} ?>
+                        <input type="text" placeholder="Password" id="password" name="password">
+                        <?/* if(isset($_SESSION['name'][0])){
+    echo 'Might be a wrong username';} */?>
                         <input type="submit" value="Confirm" id ="confirm">
                     </form>
                     <br/>
