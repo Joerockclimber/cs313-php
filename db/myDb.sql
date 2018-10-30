@@ -23,3 +23,6 @@ INSERT INTO trip (climber_id, location, date) VALUES (1, 'Yellow Stone', '3/20/2
 INSERT INTO climb (trip_id, grade, climb_name) VALUES (4, 'V6', 'The hard hard');
 
 INSERT INTO climb (trip_id, grade, climb_name) VALUES (4, 'V10', 'Surfs up');
+
+ALTER TABLE climber
+ADD password varchar(255);
