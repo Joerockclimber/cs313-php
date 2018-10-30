@@ -28,14 +28,12 @@ catch (PDOException $ex)
     die();
 } 
 
-$hash = password_hash($_SESSION['password'], PASSWORD_DEFAULT);
+$stmt = $db->prepare('SELECT name, password, climber_id FROM climber WHERE name = :name');
 
-$stmt = $db->prepare('SELECT name, climber_id FROM climber WHERE name = :name and password = :password');
-
-$stmt->execute(array(':name' => $_SESSION['name'][0], ':password' => $hash));
+$stmt->execute(array(':name' => $_SESSION['name'][0]));
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if( $result['name'] == FALSE) {
+if( $result['name'] == FALSE and password_verify ($_SESSION['password'] , $result['password'] )) {
     $host  = $_SERVER['HTTP_HOST'];
     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
     $extra = 'sign_in.php';
