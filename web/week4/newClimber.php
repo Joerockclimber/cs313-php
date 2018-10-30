@@ -25,8 +25,10 @@ catch (PDOException $ex)
 $name = $_POST['climber'];
 $password = $_POST['password'];
 
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
 $stmt = $db->prepare("INSERT INTO climber (name, password) VALUES (:name , :password )");
-$stmt->execute(array(':name' => $name, ':password' => $password));
+$stmt->execute(array(':name' => $name, ':password' => $hash));
 header("location:http://afternoon-waters-72858.herokuapp.com/week4/sign_in.php");
 exit();
 
