@@ -25,15 +25,18 @@ catch (PDOException $ex)
 $name = $_POST['climber'];
 $password = $_POST['password'];
 
+$stmt = $db->prepare("SELECT name FROM climbers WHERE name = :name");
+$stmt->execute(array(':name' => $name));
+$stmt->fetch(PDO::FETCH_ASSOC);
+if ($stmt['name'] == TRUE){
+header("location:http://afternoon-waters-72858.herokuapp.com/week4/newClimberFail.html");   
+}
+
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $db->prepare("INSERT INTO climber (name, password) VALUES (:name , :password )");
 $stmt->execute(array(':name' => $name, ':password' => $hash));
-if ($stmt == FALSE){
-header("location:http://afternoon-waters-72858.herokuapp.com/week4/newClimberFail.html");   
-}
-else{
 header("location:http://afternoon-waters-72858.herokuapp.com/week4/sign_in.php");
 exit();
-}
+
 ?>
