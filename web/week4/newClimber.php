@@ -29,7 +29,11 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = $db->prepare("INSERT INTO climber (name, password) VALUES (:name , :password )");
 $stmt->execute(array(':name' => $name, ':password' => $hash));
+if (stmt == FALSE){
+header("location:http://afternoon-waters-72858.herokuapp.com/week4/sign_in_fail.php");   
+}
+else{
 header("location:http://afternoon-waters-72858.herokuapp.com/week4/sign_in.php");
 exit();
-
+}
 ?>
