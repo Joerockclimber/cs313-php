@@ -26,8 +26,8 @@ $name = $_POST['climber'];
 $password = $_POST['password'];
 
 $stmt = $db->prepare("SELECT name FROM climber WHERE name = :name");
-$stmt->execute(array(':name' => $name));
-$stmt->fetch(PDO::FETCH_ASSOC);
+//$stmt->execute(array(':name' => $name));
+//$stmt->fetch(PDO::FETCH_ASSOC);
 if ($stmt == TRUE){
 header("location:http://afternoon-waters-72858.herokuapp.com/week4/newClimberFail.html");   
 }
