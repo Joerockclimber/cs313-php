@@ -25,8 +25,8 @@ catch (PDOException $ex)
 $name = $_POST['climber'];
 $password = $_POST['password'];
 
-$stmt = $db->prepare("SELECT name FROM climber WHERE name = :name");
-$stmt->bindParam(':name', $name);
+$stmt = $db->prepare("SELECT name FROM climber WHERE name = :ame");
+//$stmt->bindParam(':name', $name);
 //$stmt->execute(array(':name' => $name));
 //$stmt->fetch(PDO::FETCH_ASSOC);
 if ($stmt == TRUE){
